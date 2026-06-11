@@ -1,17 +1,17 @@
 /*==================== GOOGLE FONTS & VARIABLES ====================*/
 :root {
-    /* Bright, Friendly Psychology Color Palette */
-    --color-primary: #3b82f6; /* Inviting bright blue */
-    --color-primary-dark: #2563eb;
-    --color-primary-light: #e0f2fe; /* Light blue for header */
-    --color-hero-bg: #92cdc6; /* Teal background for hero matching screenshot */
-    
-    --color-bg-primary: #ffffff; 
-    --color-bg-secondary: #f8fafc; 
+    /* Teal Theme Psychology Color Palette */
+    --color-primary: #92cdc6; /* Teal color from your screenshot */
+    --color-primary-dark: #7cbab3; /* Slightly darker teal for hover states */
+    --color-primary-light: #e6f3f1; /* Very light teal for subtle backgrounds */
+    --color-hero-bg: #92cdc6; /* Teal background for hero */
+
+    --color-bg-primary: #ffffff;
+    --color-bg-secondary: #f8fafc;
     --color-bg-footer: #f1f5f9;
-    
-    --color-heading: #1e293b; 
-    --color-text: #475569; 
+
+    --color-heading: #1e293b;
+    --color-text: #475569;
     --color-text-light: #64748b;
     --color-white: #ffffff;
     --color-border: #e2e8f0;
@@ -42,7 +42,7 @@
     --height-header: 8rem;
     --transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
     --box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
-    --glow-shadow: 0px 10px 20px rgba(59, 130, 246, 0.3);
+    --glow-shadow: 0px 10px 20px rgba(146, 205, 198, 0.4);
 }
 
 /*==================== BASE ====================*/
@@ -79,7 +79,7 @@ img { max-width: 100%; display: block; }
 .section__subtitle {
     display: block;
     font-size: var(--fs-sm);
-    color: var(--color-primary);
+    color: var(--color-primary-dark);
     font-weight: var(--fw-bold);
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -158,9 +158,8 @@ img { max-width: 100%; display: block; }
 /*==================== NEW HERO BANNER ====================*/
 .hero-banner {
     background-color: var(--color-hero-bg);
-    /* Subtle squares pattern like screenshot */
-    background-image: linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
     background-size: 100px 100px;
     padding-top: 10rem;
     padding-bottom: 4rem;
@@ -184,7 +183,7 @@ img { max-width: 100%; display: block; }
 .hero-banner__img {
     max-width: 100%;
     height: auto;
-    max-height: 600px;
+    max-height: 700px;
     object-fit: contain;
     display: block;
     filter: drop-shadow(0 20px 30px rgba(0,0,0,0.15));
@@ -266,7 +265,7 @@ img { max-width: 100%; display: block; }
 .skills__content:hover {
     border-color: var(--color-primary);
     transform: translateY(-5px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
 }
 .skills__subtitle { text-align: center; margin-bottom: 2rem; font-size: 1.8rem; }
 .skills__item { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; font-size: 1.6rem; color: var(--color-text); }
@@ -286,9 +285,14 @@ img { max-width: 100%; display: block; }
 .service__card:hover {
     transform: translateY(-10px);
     border-color: var(--color-primary);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
 }
-.service__icon-wrapper { font-size: 4.5rem; margin-bottom: 2rem; transition: var(--transition); }
+.service__icon-wrapper {
+    font-size: 4.5rem;
+    margin-bottom: 2rem;
+    transition: var(--transition);
+    color: var(--color-primary);
+}
 .service__card:hover .service__icon-wrapper { transform: scale(1.15); }
 .service__title { font-size: 2rem; margin-bottom: 1.5rem; }
 .service__desc { color: var(--color-text); font-size: 1.5rem; }
@@ -306,14 +310,14 @@ img { max-width: 100%; display: block; }
     overflow: hidden;
     box-shadow: var(--box-shadow);
 }
-.review-card:hover { transform: translateY(-7px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+.review-card:hover { transform: translateY(-7px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05); }
 .review-header { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem; }
 .review-avatar {
     width: 60px;
     height: 60px;
     border-radius: 50%;
     background-color: var(--color-primary-light);
-    color: var(--color-primary);
+    color: var(--color-primary-dark);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -323,7 +327,7 @@ img { max-width: 100%; display: block; }
 .review-name { font-size: 1.8rem; margin-bottom: 0.3rem; }
 .review-stars { color: #fbbf24; font-size: 1.2rem; }
 .review-text { font-size: 1.5rem; color: var(--color-text); font-style: italic; line-height: 1.6; z-index: 2; position: relative; }
-.review-icon { position: absolute; bottom: 10px; right: 20px; font-size: 6rem; color: rgba(59, 130, 246, 0.05); z-index: 1; }
+.review-icon { position: absolute; bottom: 10px; right: 20px; font-size: 6rem; color: rgba(146, 205, 198, 0.15); z-index: 1; }
 
 /*==================== CONTACT ====================*/
 .contact__wrapper { display: grid; gap: 5rem; }
@@ -352,7 +356,7 @@ img { max-width: 100%; display: block; }
 .form-title {
     background: var(--color-bg-primary);
     padding: 2rem;
-    color: var(--color-primary);
+    color: var(--color-primary-dark);
     font-family: var(--ff-mont);
     font-weight: var(--fw-bold);
     letter-spacing: 1px;
@@ -367,7 +371,7 @@ img { max-width: 100%; display: block; }
 .footer__social-list { display: flex; gap: 2rem; justify-content: center; }
 .footer__social-link {
     font-size: 2rem;
-    color: var(--color-primary);
+    color: var(--color-primary-dark);
     width: 45px;
     height: 45px;
     display: flex;
@@ -392,7 +396,7 @@ img { max-width: 100%; display: block; }
     .nav__toggle { display: none; }
     
     .hero-banner__container {
-        grid-template-columns: 4fr 6fr; /* Places image on left, text on right */
+        grid-template-columns: 4.5fr 5.5fr; /* Gives the image a little more width */
         gap: 4rem;
         padding-top: 5rem;
     }
